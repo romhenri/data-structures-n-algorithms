@@ -45,7 +45,11 @@ class JogoVelha:
         contador = 0
         
         while True:
-            x, y = self.jogador_corrente.getJogada()
+            x, y = -9, -9
+            
+            while x == -9 or self.tabuleiro.matriz[x][y] != Tabuleiro.DESCONHECIDO:
+                x, y = self.jogador_corrente.getJogada()
+            
             self.screen.update_text_button(x, y, self.jogador_corrente.tipo)
             self.tabuleiro.matriz[x][y] = self.jogador_corrente.tipo
                                 
@@ -53,7 +57,7 @@ class JogoVelha:
             
             acabou_jogo = self.acabou_jogo()
                                 
-            if (acabou_jogo == False) and (contador == 9):
+            if not acabou_jogo and contador == 9:
                 self.screen.resultado_txt = "Deu velha!"
                 acabou_jogo = True
             

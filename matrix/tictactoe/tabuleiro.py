@@ -12,4 +12,36 @@ class Tabuleiro:
        
         
     def tem_campeao(self):
+        for l in range(0,3):
+            soma = 0
+            for c in range(0,3):
+                soma = soma + self.matriz[l][c]
+                if soma == 3:
+                    return Tabuleiro.JOGADOR_0
+                elif soma == 12:
+                    return Tabuleiro.JOGADOR_X
+
+        for a in range(0,3):
+            soma = 0
+            for b in range(0,3):
+                soma = soma +self.matriz[b][a]
+                if soma == 3:
+                    return Tabuleiro.JOGADOR_0
+                elif soma == 12:
+                    return Tabuleiro.JOGADOR_X
+        soma = 0
+        for i in range(0,3):
+            soma = soma + self.matriz[i][i]
+            if soma == 3:
+                    return Tabuleiro.JOGADOR_0
+            elif soma == 12:
+                    return Tabuleiro.JOGADOR_X
+        soma = 0
+        for i in range(0,3):
+            soma = soma + self.matriz[2-i][i]
+            if soma == 3:
+                    return Tabuleiro.JOGADOR_0
+            elif soma == 12:
+                    return Tabuleiro.JOGADOR_X
+
         return Tabuleiro.DESCONHECIDO

@@ -27,11 +27,11 @@ class Button(pygame.sprite.Sprite):
         self.font = pygame.font.SysFont("Arial", 150)
         
         if(jogador == Tabuleiro.JOGADOR_X):
-            self.text_render = self.font.render("  X", 1, self.fg)
+            self.text_render = self.font.render(" X", 1, self.fg)
         elif(jogador == Tabuleiro.JOGADOR_0):
-            self.text_render = self.font.render("  O", 1, self.fg)
+            self.text_render = self.font.render(" O", 1, self.fg)
         else:
-            self.text_render = self.font.render("  ", 1, self.fg)
+            self.text_render = self.font.render(" ", 1, self.fg)
         
         self.screen.blit(self.text_render, (self.x, self.y))
         return True
