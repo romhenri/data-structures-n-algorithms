@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import pygame
 
-from jogador import Jogador
-from tabuleiro import Tabuleiro
+from src.jogador import Jogador
+from src.tabuleiro import Tabuleiro
 
 class JogadorHumano(Jogador):
     def __init__(self, tabuleiro : Tabuleiro, _buttons : list, tipo : int):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from tabuleiro import Tabuleiro
+from src.tabuleiro import Tabuleiro
 
 class Jogador:
     def __init__(self, tabuleiro : Tabuleiro, tipo : int):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from tabuleiro_screen import TabuleiroScreen
-from tabuleiro import Tabuleiro
-from jogador import Jogador
-from jogador_ia import JogadorIA
-from jogador_humano import JogadorHumano
+from src.tabuleiro_screen import TabuleiroScreen
+from src.tabuleiro import Tabuleiro
+from src.jogador import Jogador
+from src.jogador_ia import JogadorIA
+from src.jogador_humano import JogadorHumano
 
 class JogoVelha:
     def __init__(self):
@@ -64,7 +64,7 @@ class JogoVelha:
             self.screen.desenha_tabuleiro()
             
             
-            if(acabou_jogo == True):
+            if acabou_jogo:
                 break
             
             self.troca_jogador()

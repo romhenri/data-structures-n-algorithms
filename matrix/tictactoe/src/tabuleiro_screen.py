@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
-import buttons as bt
+from os import environ
+environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 import pygame
+import time
+import src.buttons as bt
 
 class TabuleiroScreen:
     def __init__(self):
@@ -18,6 +21,8 @@ class TabuleiroScreen:
                 self.buttons[l].append( bt.Button(self.screen, (x, y), (200, 200)))
         
         self.desenha_tabuleiro()
+        logTime = time.strftime("[%H:%M:%S]", time.localtime())
+        print(logTime,  "TabuleiroScreen instanciado.")
          
     def wait_quit_event(self):
         while True:

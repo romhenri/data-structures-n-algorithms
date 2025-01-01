@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from random import randint
 
-from jogador import Jogador
-from tabuleiro import Tabuleiro
+from src.jogador import Jogador
+from src.tabuleiro import Tabuleiro
 
 class JogadorIA(Jogador):
     def __init__(self, tabuleiro : Tabuleiro, tipo : int):

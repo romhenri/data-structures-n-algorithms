@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import pygame
-from tabuleiro import Tabuleiro
+from src.tabuleiro import Tabuleiro
  
 buttons_v = pygame.sprite.Group()
 
