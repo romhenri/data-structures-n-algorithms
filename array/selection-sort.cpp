@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <chrono>
 
 using namespace std;
 
@@ -48,13 +49,13 @@ int main() {
         return 1;
     }
 
+    auto start = chrono::high_resolution_clock::now();
     SelectionSort(A);
-
-    cout << "Done: ";
-    for (int num : A) {
-        cout << num << " ";
-    }
-    cout << endl;
-
+    
+    auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);
+    double duration_s = chrono::duration<double>(end - start).count();
+    
+    cout << "SelectionSort Time: " << duration.count() << " ms, " << duration_s << " s" << endl;
     return 0;
 }
