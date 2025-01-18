@@ -15,9 +15,9 @@ class TabuleiroScreen:
         self.buttons = [[], [], []]
          
         for l in range(0,3):
-            y = 50 + l*200
+            y = 90 + l*200
             for c in range(0,3):
-                x = 50 + c*200
+                x = 110 + c*200 
                 self.buttons[l].append( bt.Button(self.screen, (x, y), (200, 200)))
         
         self.desenha_tabuleiro()
@@ -41,9 +41,9 @@ class TabuleiroScreen:
         
         colors = "black on white"
         fg, _ = colors.split(" on ")
-        font = pygame.font.SysFont("Arial", 40)
+        font = pygame.font.SysFont("Consolas", 40)
         text_render = font.render(self.resultado_txt, 1, fg)
-        self.screen.blit(text_render, (270, 5))
+        self.screen.blit(text_render, (245, 5))
         
         pygame.display.update()
         

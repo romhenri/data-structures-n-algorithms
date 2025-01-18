@@ -21,17 +21,20 @@ class Button(pygame.sprite.Sprite):
  
  
     def change_text(self, jogador):
-        if(self.jogador != Tabuleiro.DESCONHECIDO):
+        if self.jogador != Tabuleiro.DESCONHECIDO:
             return False
         self.jogador = jogador
-        self.font = pygame.font.SysFont("Arial", 150)
+        self.font = pygame.font.SysFont("Consolas", 150)
+        RED = (185, 0, 0)
+        BLUE = (0, 0, 185)
+        DEFAULT = (0, 0, 0)
         
         if(jogador == Tabuleiro.JOGADOR_X):
-            self.text_render = self.font.render(" X", 1, self.fg)
+            self.text_render = self.font.render("X", 1, BLUE)
         elif(jogador == Tabuleiro.JOGADOR_0):
-            self.text_render = self.font.render(" O", 1, self.fg)
+            self.text_render = self.font.render("O", 1, RED)
         else:
-            self.text_render = self.font.render(" ", 1, self.fg)
+            self.text_render = self.font.render("", 1, DEFAULT)
         
         self.screen.blit(self.text_render, (self.x, self.y))
         return True
