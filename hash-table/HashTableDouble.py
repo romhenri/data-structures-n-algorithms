@@ -1,4 +1,4 @@
-class HashTableDouble:
+class HashTableDouble: #
     def __init__(self, n):
         self.n = n
         self.level1_size = 10
@@ -29,3 +29,21 @@ class HashTableDouble:
             if k_existente == key:
                 return valor
         return None
+
+    def remove(self, key):
+        i = self.hash1(key)
+        j = self.hash2(key)
+        for k, (k_existente, _) in enumerate(self.table[i][j]):
+            if k_existente == key:
+                del self.table[i][j][k]
+                return True
+        return False
+
+    def __str__(self):
+        result = ""
+        for i in range(self.level1_size):
+            for j in range(self.level2_size):
+                bucket = self.table[i][j]
+                if bucket:
+                    result += f"Bucket[{i}][{j}] -> {bucket}\n"
+        return result or "Empty"

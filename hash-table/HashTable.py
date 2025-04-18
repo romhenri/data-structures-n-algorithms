@@ -14,7 +14,7 @@ class HashTable:
                 return
         self.table[index].append([key, value])
 
-    def get(self, key):
+    def search(self, key):
         index = self._hash(key)
         for pair in self.table[index]:
             if pair[0] == key:
