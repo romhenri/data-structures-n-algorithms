@@ -25,13 +25,14 @@ bool fila::inserir(int valor) {
     return true;
 }
 
-bool fila::remover() {
+int fila::remover() {
     if (estaVazia())
         return false;
 
+    int aux = consultarInicio();
     inicio = (inicio + 1) % capacidade;
     tamanho--;
-    return true;
+    return aux;
 }
 
 int fila::consultarInicio() const {

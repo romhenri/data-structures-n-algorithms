@@ -21,14 +21,20 @@ int main() {
     f.inserir(40);
     cout << "Fila: ";
     f.imprimir();
+    f.inserir(50);
+    cout << "Fila: ";
+    f.imprimir(); 
 
     while (!f.estaCheia()) f.inserir(1);
 
     cout << "Fila cheia? " << (f.estaCheia() ? "Sim" : "Não") << endl;
-
-    while (!f.estaVazia()) f.remover();
-
+    
+    while (!f.estaVazia()) {
+        cout << "Fila: ";
+        f.imprimir(); 
+        f.remover();
+    }
+    
     cout << "Fila vazia? " << (f.estaVazia() ? "Sim" : "Não") << endl;
-
     return 0;
 }
